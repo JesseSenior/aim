@@ -1,0 +1,20 @@
+{
+    "python.testing.pytestArgs": [
+        "."
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true,
+    "[python]": {
+        "editor.rulers": [
+            {
+                "column": 120,
+                "color": "#28C896"
+            }
+        ],
+        "editor.wordWrapColumn": 120,
+        "editor.defaultFormatter": "ms-python.black-formatter",
+    },
+    "black-formatter.args": [
+        "-l 120"
+    ],
+}

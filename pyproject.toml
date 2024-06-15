@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools >= 40.9.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aim"
+authors = [{ name = "Jesse Senior", email = "jessesenior@outlook.com" }]
+description = "AI Makeover"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+version = "0.0.1"
+dependencies = [
+    "dior @ git+ssh://git@github.com:443/JesseSenior/dressing-in-order.git",
+    #"detectron2 @ git+ssh://git@github.com:443/facebookresearch/detectron2.git", # bug: Long path on windows.
+    "paddlepaddle-gpu>=2.0.0",
+    "paddlehub>=2.0.0",
+    "tqdm",
+    "tyro",
+    "pytest",
+
+    # Requirements for Qwen-VL
+    "transformers==4.32.0",
+    "accelerate",
+    "tiktoken",
+    "einops",
+    "transformers_stream_generator==0.0.4",
+    "scipy",
+    "torchvision",
+    "pillow",
+    "tensorboard",
+    "matplotlib",
+]
+
+[tool.setuptools.package-dir]
+aim = "aim"
