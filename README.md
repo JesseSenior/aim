@@ -1,6 +1,14 @@
+![banner](./asset/banner.png)
+
 # AI Makeover
 
-## Installation
+⚠️: This project is still under heavy development, and the codes and API are **NOT** consistent.
+
+[Download prereleased apk](https://github.com/JesseSenior/aim/releases/download/v0.0.1/aim.apk)
+
+For flutter app's source code, see [branch gui](https://github.com/JesseSenior/aim/tree/gui)
+
+## Backend Installation
 
 ```bash
 pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
