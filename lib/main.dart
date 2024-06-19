@@ -1,10 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
 import 'package:aim/index.dart';
-import 'package:aim/utils/prefs.dart';
+import 'package:aim/states/base.dart';
+import 'package:aim/states/chat.dart';
+import 'package:aim/states/configs.dart';
+import 'package:aim/states/garments.dart';
+import 'package:aim/states/tryon.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Prefs.init();
+
+  await SPUtils.init();
+  await ConfigState.init();
+  await ChatState.init();
+  await GarmentsState.init();
+  await TryOnResultsState.init();
+
   runApp(const MyApp());
 }
 
@@ -14,28 +26,29 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'AI Makeover',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.purple.shade700),
-        useMaterial3: true,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<ConfigState>(create: (_) => ConfigState()),
+        ChangeNotifierProvider<ChatState>(create: (_) => ChatState()),
+        ChangeNotifierProvider<GarmentsState>(create: (_) => GarmentsState()),
+        ChangeNotifierProvider<TryOnResultsState>(
+            create: (_) => TryOnResultsState()),
+      ],
+      child: MaterialApp(
+        title: 'AI Makeover',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(
+              seedColor: Colors.purple.shade700, brightness: Brightness.light),
+          useMaterial3: true,
+        ),
+        darkTheme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(
+              seedColor: Colors.purple.shade700, brightness: Brightness.dark),
+          useMaterial3: true,
+        ),
+        themeMode: ThemeMode.system,
+        home: const MyHomePage(title: 'AI Makeover'),
       ),
-      home: const MyHomePage(title: 'AI Makeover'),
     );
   }
 }

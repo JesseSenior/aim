@@ -21,22 +21,9 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  bool _hideAppBar = false;
   int _currentIndex = 0;
 
-  _getAppBar() {
-    var appbar = AppBar(
-      backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-      title: Text(widget.title),
-    );
-    // Hide on other page:
-    if (_currentIndex != 0 || _hideAppBar) {
-      return null;
-    }
-    return appbar;
-  }
-
-  final List _pageList = [const HomePage(), const AboutPage()];
+  final List pageList = [const HomePage(), const AboutPage()];
 
   @override
   Widget build(BuildContext context) {
@@ -48,8 +35,8 @@ class _MyHomePageState extends State<MyHomePage> {
     // than having to individually change instances of widgets.
 
     return Scaffold(
-      appBar: _getAppBar(),
-      body: _pageList[_currentIndex],
+      resizeToAvoidBottomInset: false,
+      body: pageList[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         onTap: (int index) {
