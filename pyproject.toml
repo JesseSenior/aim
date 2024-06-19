@@ -9,7 +9,6 @@ authors = [
     { name = "Di Fang", email = "fti@mail.scut.edu.cn" },
     { name = "wu di bao long zhanshi", email = "202164690091@mail.scut.edu.cn" },
     { name = "Scott Ye", email = "202164690510@mail.scut.edu.cn" },
-    { name = "Scott Ye", email = "202164690510@mail.scut.edu.cn" },
     { name = "Yufei Pan", email = "2416072710@qq.com" },
 ]
 description = "AI Makeover"
