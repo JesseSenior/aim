@@ -7,9 +7,7 @@ from aim.preview.model import predict
 from aim.preview.data import InputImage
 
 
-def get_input_image(
-    image_path, mask_path=None, keypoints_path=None, *args, **kwargs
-):
+def get_input_image(image_path, mask_path=None, keypoints_path=None, *args, **kwargs):
     image = Image.open(image_path)
     mask = None if mask_path is None else Image.open(mask_path)
     keypoints = None if keypoints_path is None else np.loadtxt(keypoints_path)

@@ -4,19 +4,29 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "aim"
-authors = [{ name = "Jesse Senior", email = "jessesenior@outlook.com" }]
+authors = [
+    { name = "Jesse Senior", email = "jessesenior@outlook.com" },
+    { name = "Di Fang", email = "fti@mail.scut.edu.cn" },
+    { name = "wu di bao long zhanshi", email = "202164690091@mail.scut.edu.cn" },
+    { name = "Scott Ye", email = "202164690510@mail.scut.edu.cn" },
+    { name = "Scott Ye", email = "202164690510@mail.scut.edu.cn" },
+    { name = "Yufei Pan", email = "2416072710@qq.com" },
+]
 description = "AI Makeover"
 requires-python = ">=3.10"
 license = { text = "MIT" }
 version = "0.0.1"
 dependencies = [
-    "dior @ git+ssh://git@github.com:443/JesseSenior/dressing-in-order.git",
-    #"detectron2 @ git+ssh://git@github.com:443/facebookresearch/detectron2.git", # bug: Long path on windows.
+    "dior @ git+https://github.com/JesseSenior/dressing-in-order.git",
+    "detectron2 @ git+https://github.com/facebookresearch/detectron2.git",
     "paddlepaddle-gpu>=2.0.0",
     "paddlehub>=2.0.0",
+    "protobuf<3.21",
     "tqdm",
     "tyro",
     "pytest",
+    "peft<=0.11.1",
+    "fashion-clip",
 
     # Requirements for Qwen-VL
     "transformers==4.32.0",
