@@ -2,11 +2,18 @@
 
 # AI Makeover
 
-⚠️: This project is still under heavy development, and the codes and API are **NOT** consistent.
-
 [Download prereleased apk](https://github.com/JesseSenior/aim/releases/download/v0.0.1/aim.apk)
 
 For flutter app's source code, see [branch gui](https://github.com/JesseSenior/aim/tree/gui)
+
+## Demo
+
+| demo                   | demo                   |
+| ---------------------- | ---------------------- |
+| ![](./asset/demo0.gif) | ![](./asset/demo1.jpg) |
+| ![](./asset/demo2.jpg) | ![](./asset/demo3.jpg) |
+| ![](./asset/demo4.jpg) | ![](./asset/demo5.jpg) |
+| ![](./asset/demo6.jpg) | ![](./asset/demo7.jpg) |
 
 ## Backend Installation
 
